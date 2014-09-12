@@ -28,3 +28,10 @@ After Deploy on Application Server
 ----------------------------------
 - The REST WS are accessible under /rest/*
 - Front-End not yet implemented.
+
+Creating a Local Maven Archetype
+--------------------------------
+- Generate an archetype: <code> mvn archetype:create-from-project </code>
+- Go to <code>target/generated-sources/archetype</code> and run <code>mvn install </code>
+- Create a fresh project from Archetype <code> mvn archetype:generate -DarchetypeCatalog=local </code> using <code>com.pampanet:jersey-guice-bootstrap-archetype </code>
+- From Eclipse you have check the "include snapshot archetypes" checkbox, and select the archetype from the catalog after installing it.
