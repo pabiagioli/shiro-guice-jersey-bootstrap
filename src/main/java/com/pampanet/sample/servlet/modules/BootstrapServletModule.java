@@ -35,7 +35,7 @@ public class BootstrapServletModule extends ServletModule{
         //filter("/*").through(PersistFilter.class);
         //if you had a ShiroWebModule installed above you would need to add this GuiceShiroFilter also.
         //filter("/*").through(GuiceShiroFilter.class);
-        serve("/*").with(GuiceContainer.class, params);
+        serve("/rest/*").with(GuiceContainer.class, params);
         
 	}
 }
