@@ -8,10 +8,10 @@ Dependencies included
 - Servlet 2.5
 - Jersey 1.18.1
 - Guice 3.0
-- guice-persist
-- guava
-- gson
-- joda-time
+- guice-persist 3.0
+- gson 2.2.4
+- joda-time 2.4
+- JUnit 4.10
 
 Requirements
 ------------
