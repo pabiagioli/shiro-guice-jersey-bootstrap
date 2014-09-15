@@ -7,12 +7,13 @@
 	<version>0.0.1-SNAPSHOT</version>
 	<name>jersey-guice-bootstrap Maven Webapp</name>
 	<url>http://github.com/pabiagioli/jersey-guice-bootstrap</url>
-	
+
 	<properties>
 		<version.jersey>1.18.1</version.jersey>
 		<version.guice>3.0</version.guice>
 		<version.junit>4.10</version.junit>
 		<version.servlet>2.5</version.servlet>
+		<version.shiro>1.2.3</version.shiro>
 	</properties>
 
 	<dependencies>
@@ -67,6 +68,17 @@
 			<artifactId>guice-persist</artifactId>
 			<version>${version.guice}</version>
 		</dependency>
+		<!-- Apache Shiro -->
+		<dependency>
+			<groupId>org.apache.shiro</groupId>
+			<artifactId>shiro-web</artifactId>
+			<version>${version.shiro}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.shiro</groupId>
+			<artifactId>shiro-guice</artifactId>
+			<version>${version.shiro}</version>
+		</dependency>
 		<!-- Gson: Java to Json conversion -->
 		<dependency>
 			<groupId>com.google.code.gson</groupId>
@@ -91,11 +103,11 @@
 	<build>
 		<finalName>${project.artifactId}</finalName>
 		<resources>
-            <resource>
-                <directory>src/main/resources</directory>
-                <filtering>true</filtering>
-            </resource>
-        </resources>
+			<resource>
+				<directory>src/main/resources</directory>
+				<filtering>true</filtering>
+			</resource>
+		</resources>
 		<plugins>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
