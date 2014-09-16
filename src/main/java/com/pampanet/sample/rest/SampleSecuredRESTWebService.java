@@ -13,7 +13,7 @@ import org.apache.shiro.authz.annotation.RequiresPermissions;
 import com.google.inject.Inject;
 
 /**
- * Sample Secured RESTful Web Service
+ * Sample Secured RESTful Web Service<br>
  * 
  * The constructor has Guice injections to enable also Shiro AOP annotations
  * 
