@@ -22,7 +22,17 @@ Requirements
 
 Building and Running
 ---------------------
-- Install the archetype in your local Maven Repo <code>mvn install</code>
+- Install the Archetype in your local Maven Repo `mvn install`
+- Create a New Maven Project from command line:
+```bash
+mvn archetype:generate -DarchetypeGroupId=com.pampanet 
+  -DarchetypeArtifactId=secure-rest-webapp-archetype 
+  -DarchetypeVersion=0.1.0-RELEASE 
+  -DgroupId=<my.company.name> 
+  -DartifactId=<sample> 
+  -DarchetypeRepository=local 
+  -DinteractiveMode=false
+```
 
 Apache Shiro Filters
 --------------------
