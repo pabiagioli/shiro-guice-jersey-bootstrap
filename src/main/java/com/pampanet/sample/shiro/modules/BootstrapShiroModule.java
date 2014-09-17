@@ -38,6 +38,7 @@ public class BootstrapShiroModule extends ShiroWebModule{
             addError(e);
         }
 		addFilterChain("/logout", LOGOUT);
+		addFilterChain("/rest/public/**",ANON);
 		addFilterChain("/rest/**",NO_SESSION_CREATION, AUTHC_BASIC);
 		addFilterChain("/**", AUTHC_BASIC);
         
