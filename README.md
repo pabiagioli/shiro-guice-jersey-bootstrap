@@ -1,13 +1,14 @@
-jersey-guice-bootstrap
+shiro-jersey-guice-bootstrap
 ======================
 
-RESTful Web Services Application Sample Project with Jersey 1.18.1 and Google Guice 3.0
+Secure RESTful Web Services Application Sample Project with Apache Shiro 1.2.3, Jersey 1.18.1 and Google Guice 3.0
 
 Dependencies included
 ---------------------
 - Servlet 2.5
 - Jersey 1.18.1
 - Guice 3.0
+- Apache Shiro 1.2.3
 - guice-persist 3.0
 - gson 2.2.4
 - joda-time 2.4
@@ -35,3 +36,14 @@ Creating a Local Maven Archetype
 - Go to <code>target/generated-sources/archetype</code> and run <code>mvn install </code>
 - Create a fresh project from Archetype <code> mvn archetype:generate -DarchetypeCatalog=local </code> using <code>com.pampanet:jersey-guice-bootstrap-archetype </code>
 - From Eclipse you have check the "include snapshot archetypes" checkbox, and select the archetype from the catalog after installing it.
+
+Apache Shiro Filters
+--------------------
+- Shiro's Default Filters: http://shiro.apache.org/web.html#Web-DefaultFilters
+- In <code>com.pampanet.sample.shiro.modules.BootstrapShiroModule</code> are all the filters, placed in order.
+- You can replace <code>com.pampanet.sample.shiro.modules.ShiroAnnotationsModule</code> with Shiro's default <code>ShiroAopModule</code> class.
+
+Apache Shiro Users Configuration
+--------------------------------
+- Sample <code>shiro.ini</code> file in <code>src/main/resources</code>
+- To configure more Realms and Filters, refer to Shiro's Documentation

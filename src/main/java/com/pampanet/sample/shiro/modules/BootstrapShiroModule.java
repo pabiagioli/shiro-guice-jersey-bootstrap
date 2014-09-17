@@ -1,22 +1,13 @@
 package com.pampanet.sample.shiro.modules;
 
-import java.io.PrintWriter;
-
 import javax.servlet.ServletContext;
-import javax.servlet.ServletRequest;
-import javax.servlet.ServletResponse;
-import javax.servlet.http.HttpServletResponse;
-import javax.ws.rs.core.Response.Status;
 
 import org.apache.shiro.authc.credential.CredentialsMatcher;
 import org.apache.shiro.authc.credential.HashedCredentialsMatcher;
 import org.apache.shiro.config.Ini;
 import org.apache.shiro.guice.web.ShiroWebModule;
 import org.apache.shiro.realm.text.IniRealm;
-import org.apache.shiro.web.filter.authc.AuthenticatingFilter;
-import org.apache.shiro.web.filter.authc.BasicHttpAuthenticationFilter;
 
-import com.google.inject.Key;
 import com.google.inject.Provides;
 import com.google.inject.Singleton;
 
@@ -46,9 +37,9 @@ public class BootstrapShiroModule extends ShiroWebModule{
         } catch (NoSuchMethodException e) {
             addError(e);
         }
-		Key<MyHttpAuthFilter> authcBasic =  Key.get(MyHttpAuthFilter.class);
 		addFilterChain("/logout", LOGOUT);
-        addFilterChain("/**", config(authcBasic,AuthenticatingFilter.PERMISSIVE));
+		addFilterChain("/rest/**",NO_SESSION_CREATION, AUTHC_BASIC);
+		addFilterChain("/**", AUTHC_BASIC);
         
 	}
 
@@ -58,21 +49,6 @@ public class BootstrapShiroModule extends ShiroWebModule{
 		Ini result = Ini.fromResourcePath("classpath:shiro.ini"); 
         return result;
     }
-	
-	public static class MyHttpAuthFilter extends BasicHttpAuthenticationFilter{
-		@Override
-		protected boolean onAccessDenied(ServletRequest request,
-				ServletResponse response) throws Exception {
-			HttpServletResponse result = (HttpServletResponse) response;
-			
-			result.setContentType("application/json;charset=UTF-8");
-	        PrintWriter out = result.getWriter();
-	        out.print("Don't have enough permissions to access this resource");
-	        result.setStatus(Status.UNAUTHORIZED.getStatusCode());
-	        
-			return false;
-		}
-	}
 	
 	/**
 	 * When annotations activated, you'll need to hash passwords in your configured Realm (i.e.: shiro.ini file)

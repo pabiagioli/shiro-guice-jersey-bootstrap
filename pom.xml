@@ -2,11 +2,11 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.pampanet</groupId>
-	<artifactId>jersey-guice-bootstrap</artifactId>
+	<artifactId>secure-rest-webapp</artifactId>
 	<packaging>war</packaging>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>jersey-guice-bootstrap Maven Webapp</name>
-	<url>http://github.com/pabiagioli/jersey-guice-bootstrap</url>
+	<name>Apache Shiro, Guice and Jersey Sample Project</name>
+	<url>http://github.com/pabiagioli/shiro-guice-jersey-bootstrap</url>
 
 	<properties>
 		<version.jersey>1.18.1</version.jersey>
@@ -22,6 +22,23 @@
 			<groupId>javax.servlet</groupId>
 			<artifactId>servlet-api</artifactId>
 			<version>${version.servlet}</version>
+		</dependency>
+		<dependency>
+			<groupId>javax.servlet.jsp</groupId>
+			<artifactId>jsp-api</artifactId>
+			<version>2.1</version>
+			<scope>provided</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>taglibs</groupId>
+			<artifactId>standard</artifactId>
+			<version>1.1.2</version>
+		</dependency>
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>jstl</artifactId>
+			<version>1.2</version>
 		</dependency>
 		<dependency>
 			<groupId>commons-logging</groupId>
