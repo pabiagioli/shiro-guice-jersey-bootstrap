@@ -1,5 +1,5 @@
-shiro-jersey-guice-bootstrap
-======================
+shiro-guice-jersey-bootstrap
+============================
 
 Secure RESTful Web Services Application Sample Project with Apache Shiro 1.2.3, Jersey 1.18.1 and Google Guice 3.0
 
@@ -32,10 +32,10 @@ After Deploy on Application Server
 
 Creating a Local Maven Archetype
 --------------------------------
-- Generate an archetype: <code> mvn archetype:create-from-project </code>
-- Go to <code>target/generated-sources/archetype</code> and run <code>mvn install </code>
+- Generate an archetype: <code>mvn archetype:create-from-project</code>
+- Go to <code>target/generated-sources/archetype</code> and run <code>mvn install</code>
 - Create a fresh project from Archetype <code> mvn archetype:generate -DarchetypeCatalog=local </code> using <code>com.pampanet:secure-rest-webapp-archetype</code>
-- From Eclipse you have check the "include snapshot archetypes" checkbox, and select the archetype from the catalog after installing it.
+- You can select the archetype from Eclipse IDE from the "New Maven Project" Wizard
 
 Apache Shiro Filters
 --------------------
