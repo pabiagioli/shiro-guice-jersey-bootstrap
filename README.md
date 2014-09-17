@@ -46,4 +46,4 @@ Apache Shiro Filters
 Apache Shiro Users Configuration
 --------------------------------
 - Sample <code>shiro.ini</code> file in <code>src/main/resources</code>
-- To configure more Realms and Filters, refer to Shiro's Documentation
+- To configure more Realms and Filters, refer to Shiro's Documentation https://shiro.apache.org/static/current/apidocs/org/apache/shiro/realm/Realm.html

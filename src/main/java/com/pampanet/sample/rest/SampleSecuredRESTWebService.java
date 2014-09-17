@@ -4,6 +4,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
+import javax.ws.rs.Produces;
+import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 
 import org.apache.shiro.SecurityUtils;
@@ -39,6 +41,7 @@ public class SampleSecuredRESTWebService {
 	@Path("/allowed")
 	@RequiresPermissions("lightsaber:allowed")
 	@RequiresAuthentication
+	@Produces(MediaType.APPLICATION_JSON)
 	public Response sayHelloToUser(){
 		return Response.ok("Hello "+SecurityUtils.getSubject().getPrincipal()+"!").build();
 	}
@@ -46,6 +49,7 @@ public class SampleSecuredRESTWebService {
 	@GET
 	@Path("/forbidden")
 	@RequiresPermissions("forbiddenForAllExceptRoot")
+	@Produces(MediaType.APPLICATION_JSON)
 	public Response forbiddenToAll(){
 		return Response.ok("Got Root!").build();
 	}
