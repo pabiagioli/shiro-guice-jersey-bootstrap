@@ -1,0 +1,17 @@
+#set( $symbol_pound = '#' )
+#set( $symbol_dollar = '$' )
+#set( $symbol_escape = '\' )
+package ${package}.rest;
+
+import javax.ws.rs.GET;
+import javax.ws.rs.Path;
+import javax.ws.rs.core.Response;
+
+@Path("/public")
+public class SamplePublicRESTWebService {
+
+	@GET
+	public Response sayHelloPublic(){
+		return Response.ok("Hello Anonymous Person").build();
+	}
+}
