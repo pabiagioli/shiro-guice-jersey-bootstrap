@@ -1,7 +1,7 @@
-shiro-guice-jersey-bootstrap
+secure-rest-webapp-archetype
 ============================
 
-Secure RESTful Web Services Application Sample Project with Apache Shiro 1.2.3, Jersey 1.18.1 and Google Guice 3.0
+Secure RESTful Web Services Archetype with Apache Shiro 1.2.3, Jersey 1.18.1 and Google Guice 3.0
 
 Dependencies included
 ---------------------
@@ -20,22 +20,9 @@ Requirements
 - Maven 3
 - Tomcat 7
 
-Building
---------
-- Make the war file <code> mvn clean package </code>
-- Deploy the war file in Tomcat 7 with Eclipse or manually
-
-After Deploy on Application Server
-----------------------------------
-- The REST WS are accessible under /rest/*
-- Front-End not yet implemented.
-
-Creating a Local Maven Archetype
---------------------------------
-- Generate an archetype: <code>mvn archetype:create-from-project</code>
-- Go to <code>target/generated-sources/archetype</code> and run <code>mvn install</code>
-- Create a fresh project from Archetype <code> mvn archetype:generate -DarchetypeCatalog=local </code> using <code>com.pampanet:secure-rest-webapp-archetype</code>
-- You can select the archetype from Eclipse IDE from the "New Maven Project" Wizard
+Building and Running
+---------------------
+- Install the archetype in your local Maven Repo <code>mvn install</code>
 
 Apache Shiro Filters
 --------------------
