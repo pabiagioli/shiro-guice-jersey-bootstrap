@@ -34,7 +34,7 @@ Creating a Local Maven Archetype
 --------------------------------
 - Generate an archetype: <code> mvn archetype:create-from-project </code>
 - Go to <code>target/generated-sources/archetype</code> and run <code>mvn install </code>
-- Create a fresh project from Archetype <code> mvn archetype:generate -DarchetypeCatalog=local </code> using <code>com.pampanet:jersey-guice-bootstrap-archetype </code>
+- Create a fresh project from Archetype <code> mvn archetype:generate -DarchetypeCatalog=local </code> using <code>com.pampanet:secure-rest-webapp-archetype</code>
 - From Eclipse you have check the "include snapshot archetypes" checkbox, and select the archetype from the catalog after installing it.
 
 Apache Shiro Filters
